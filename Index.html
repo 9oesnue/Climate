@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>송장군 재단 - 생태 전환의 푸른 씨앗</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* 5. 디자인: 부드럽고 트렌디한 현대적 디자인 */
+        :root {
+            --primary-color: #4CAF50; /* 주 색상: 그린 */
+            --secondary-color: #8BC34A; /* 보조 색상: 연한 그린 */
+            --accent-color: #2196F3; /* 강조 색상: 블루 */
+            --text-color: #333;
+            --bg-light: #F9F9F9;
+            --font-family: 'Noto Sans KR', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-family);
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: white;
+            scroll-behavior: smooth; /* 2. 스크롤 자연스럽게 */
+        }
+
+        /* 공통 스타일 */
+        h1, h2, h3 {
+            font-weight: 700;
+            margin-bottom: 0.5em;
+        }
+
+        /* 3. 화면을 꽉 채우는 홈페이지 섹션 */
+        .section {
+            min-height: 100vh; /* 뷰포트 높이 100% */
+            padding: 80px 5%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            background-color: white;
+        }
+
+        .section:nth-child(even) {
+            background-color: var(--bg-light);
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        /* 헤더/네비게이션 */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            z-index: 1000;
+            padding: 15px 5%;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.5em;
+            color: var(--primary-color);
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            margin-left: 30px;
+            font-weight: 400;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        /* 4. 섹션별 스타일 */
+        /* 홈 섹션 (소개) */
+        #home {
+            background-image: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url('placeholder-eco-image.jpg'); /* 친환경 이미지 대체 */
+            background-size: cover;
+            background-position: center;
+            color: var(--text-color);
+        }
+        
+        #home h1 {
+            font-size: 3em;
+            color: var(--primary-color);
+            margin-bottom: 0.2em;
+        }
+        
+        #home p {
+            font-size: 1.2em;
+            max-width: 600px;
+            margin-bottom: 2em;
+        }
+
+        .cta-button {
+            padding: 12px 30px;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .cta-button:hover {
+            background-color: #388E3C;
+            transform: translateY(-2px);
+        }
+
+        /* 핵심 활동 섹션 */
+        .activity-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .activity-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+            text-align: left;
+        }
+
+        .activity-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* 뉴스/스토리 섹션 (블로그 스타일 강조) */
+        #news .story-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 30px;
+            padding: 20px 0;
+            border-bottom: 1px solid #eee;
+            text-align: left;
+        }
+        
+        .story-item img {
+            width: 150px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .story-item h3 {
+            margin-top: 0;
+            color: var(--primary-color);
+        }
+
+        /* 푸터 */
+        footer {
+            padding: 30px 5%;
+            background-color: #333;
+            color: white;
+            text-align: center;
+            font-size: 0.9em;
+        }
+        
+        .copyright {
+            margin-top: 10px;
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="container">
+            <a href="#home" class="logo">🌲 송장군 재단</a>
+            <div>
+                <a href="#intro">소개</a>
+                <a href="#activities">핵심 활동</a>
+                <a href="#campaign">캠페인 참여</a>
+                <a href="#news">뉴스/스토리</a>
+                <a href="#contact">후원/문의</a>
+            </div>
+        </nav>
+    </header>
+
+    <section id="home" class="section">
+        <div class="container">
+            <h1>송장군 재단: 푸른 씨앗 재단 🌱</h1>
+            <p>미래를 심는 청소년, 오늘부터 Green Action! 우리의 작은 실천이 지구의 내일을 바꿉니다.</p>
+            <a href="#activities" class="cta-button">재단 활동 알아보기</a>
+        </div>
+    </section>
+
+    <section id="intro" class="section">
+        <div class="container">
+            <h2>재단 소개: 생태 전환 청소년 연대</h2>
+            <p style="max-width: 800px; margin: 20px auto;">송장군 재단은 고등학생들이 주축이 되어 생태와 환경 문제에 대한 실질적인 해결책을 모색하고 실천하는 비영리 재단입니다. 우리는 청소년의 창의력과 에너지를 모아 지속 가능한 미래를 위한 변화를 이끌어 갑니다.</p>
+            <img src="placeholder-youth-action.jpg" alt="청소년 환경 활동 이미지" style="width: 100%; max-width: 600px; border-radius: 15px; margin-top: 30px;">
+        </div>
+    </section>
+
+    <section id="activities" class="section">
+        <div class="container">
+            <h2 style="color: var(--primary-color);">주요 활동: Green Act Fund</h2>
+            <p>우리가 집중하는 다섯 가지 핵심 영역을 소개합니다.</p>
+            <div class="activity-grid">
+                <div class="activity-card">
+                    <h3>🔍 지역 생태 탐사 프로젝트</h3>
+                    <p>학교 주변 생태계를 기록하고 디지털 아카이브를 구축하여 지역 환경 이해도를 높입니다.</p>
+                </div>
+                <div class="activity-card">
+                    <h3>💡 탄소 발자국 솔루션 개발</h3>
+                    <p>청소년 주도의 에너지 절약 캠페인과 친환경 실천 웹앱/도구 개발에 참여합니다.</p>
+                </div>
+                <div class="activity-card">
+                    <h3>🎬 환경 교육 콘텐츠 제작</h3>
+                    <p>기후 변화, 제로 웨이스트 등 환경 주제를 쉽고 재미있게 풀어낸 교육 자료를 만듭니다.</p>
+                </div>
+                <div class="activity-card">
+                    <h3>🌱 도시 친환경 공간 조성</h3>
+                    <p>옥상 정원, 빗물 정원 등 도시 생물 다양성 증진을 위한 공간을 직접 조성하고 관리합니다.</p>
+                </div>
+                <div class="activity-card">
+                    <h3>🗣️ 정책 제안 및 환경 포럼</h3>
+                    <p>지역 환경 의제를 발굴하고 지자체에 정책을 제안하는 청소년 토론회에 참여합니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="campaign" class="section">
+        <div class="container">
+            <h2>함께 해요! Eco-Frontier 캠페인</h2>
+            <p style="max-width: 800px; margin: 20px auto;">지금 송장군 재단의 핵심 캠페인에 참여하여 푸른 미래를 만드는 실천에 동참해 주세요!</p>
+            <div style="background-color: white; padding: 40px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); width: 100%; max-width: 700px;">
+                <h3>✨ #일회용품_Free 챌린지 ✨</h3>
+                <p>일상에서 일회용품 사용을 줄이고 인증샷을 공유하세요. 매월 우수 참가자에게 친환경 키트를 드립니다!</p>
+                <a href="#" class="cta-button" style="background-color: var(--accent-color); margin-top: 20px;">챌린지 참여하기</a>
+            </div>
+        </div>
+    </section>
+    
+    <section id="news" class="section" style="min-height: auto;">
+        <div class="container">
+            <h2>최신 뉴스 & 청소년 스토리</h2>
+            <p>재단의 활동 소식과 환경을 지키는 청소년들의 이야기를 만나보세요. (블로그 스타일)</p>
+            
+            <div style="width: 100%; max-width: 900px; margin-top: 30px;">
+                
+                <article class="story-item">
+                    <img src="placeholder-news-1.jpg" alt="뉴스 이미지 1">
+                    <div>
+                        <h3>청소년 생태 탐사단, 멸종 위기종 새 발견 보고</h3>
+                        <p>2025년 10월 30일 | 지역 생태 탐사 프로젝트팀이 주도한...</p>
+                        <a href="#" style="color: var(--primary-color);">더 읽어보기 &rarr;</a>
+                    </div>
+                </article>
+
+                <article class="story-item">
+                    <img src="placeholder-news-2.jpg" alt="뉴스 이미지 2">
+                    <div>
+                        <h3>탄소 솔루션 앱 'GreenGO' 출시, 학교 내 에너지 절약 혁신!</h3>
+                        <p>2025년 10월 25일 | IT 동아리와 협력하여 개발한 앱이...</p>
+                        <a href="#" style="color: var(--primary-color);">더 읽어보기 &rarr;</a>
+                    </div>
+                </article>
+
+                <article class="story-item">
+                    <img src="placeholder-news-3.jpg" alt="뉴스 이미지 3">
+                    <div>
+                        <h3>[스토리] 꿀벌 정원을 만든 1학년 학생의 이야기</h3>
+                        <p>2025년 10월 20일 | 도시 생물 다양성 프로젝트에 참여한...</p>
+                        <a href="#" style="color: var(--primary-color);">더 읽어보기 &rarr;</a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 style="color: var(--primary-color);">함께 이룰 푸른 세상</h2>
+            <p style="font-size: 1.2em;">송장군 재단의 지속 가능한 활동을 응원해 주세요.</p>
+            
+            <div style="display: flex; gap: 40px; margin-top: 40px;">
+                <a href="#" class="cta-button">💚 후원하기</a>
+                <a href="mailto:contact@songjanggun.org" class="cta-button" style="background-color: #777;">✉️ 문의하기</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>송장군 재단 | 전화: 02-1234-5678 | 이메일: contact@songjanggun.org</p>
+        <p class="copyright">이 홈페이지의 지적 소유권은 **송장군 재단**에 있습니다.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // 네비게이션 활성화 상태 표시 등의 JS 기능을 추가할 수 있습니다.
+            // 현재는 CSS의 scroll-behavior: smooth; 로 충분히 자연스러운 스크롤을 구현합니다.
+
+            // 로고 클릭 시 최상단으로 이동 (부드러운 스크롤)
+            document.querySelector('.logo').addEventListener('click', (e) => {
+                e.preventDefault();
+                document.getElementById('home').scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+
+</body>
+</html>
